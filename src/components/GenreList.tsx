@@ -18,8 +18,8 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
         <List>
             {isLoading && Skeletons.map((Skeleton) => <GenreListSkeleton key={Skeleton} />)}
             {data.map((genre) => (
-                <HStack>
-                    <ListItem key={genre.id} paddingY="5px">
+                <HStack key={genre.id}>
+                    <ListItem paddingY="5px">
                         <HStack>
                             <Image boxSize="32px" borderRadius={8} src={getCroppedImageUrl(genre.image_background)} />
                             <Button
