@@ -21,7 +21,7 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
             </Heading>
             <List>
                 {isLoading && Skeletons.map((Skeleton) => <GenreListSkeleton key={Skeleton} />)}
-                {data.map((genre) => (
+                {data?.results.map((genre) => (
                     <HStack key={genre.id}>
                         <ListItem paddingY="5px">
                             <HStack>
