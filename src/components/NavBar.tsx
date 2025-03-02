@@ -4,18 +4,13 @@ import logoBlack from "../assets/Logo-black.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
-// TODO: we are passing a func to two levels.
-interface Props {
-    onSearch: (searchText: string) => void;
-}
-
-const NavBar = ({ onSearch }: Props) => {
+const NavBar = () => {
     const { colorMode } = useColorMode();
 
     return (
         <HStack padding="10px">
             <Image src={colorMode === "dark" ? logoWhite : logoBlack} w="auto" h="80px" />
-            <SearchInput onSearch={onSearch} />
+            <SearchInput />
             <ColorModeSwitch />
         </HStack>
     );
