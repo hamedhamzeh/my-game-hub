@@ -15,14 +15,14 @@ const GenreList = () => {
 
     return (
         <>
-            <Heading fontSize="2xl" marginBottom={6} marginTop={2}>
+            <Heading fontSize="2xl" fontWeight="semibold" marginBottom={6} marginTop={1}>
                 Genres
             </Heading>
             <List>
                 {isLoading && Skeletons.map((Skeleton) => <GenreListSkeleton key={Skeleton} />)}
                 {data?.results.map((genre) => (
                     <HStack key={genre.id}>
-                        <ListItem paddingY="5px">
+                        <ListItem paddingY="4px">
                             <HStack>
                                 <Image
                                     boxSize="32px"
@@ -32,7 +32,7 @@ const GenreList = () => {
                                 />
                                 <Button
                                     fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
-                                    fontSize="lg"
+                                    fontSize="md"
                                     variant="link"
                                     whiteSpace="normal"
                                     textAlign="left"

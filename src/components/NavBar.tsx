@@ -11,7 +11,14 @@ const NavBar = () => {
     return (
         <HStack padding="10px">
             <Link to="/">
-                <Image src={colorMode === "dark" ? logoWhite : logoBlack} w="auto" h="80px" objectFit="cover" />
+                <Image
+                    src={colorMode === "dark" ? logoWhite : logoBlack}
+                    paddingX={2}
+                    marginRight={3}
+                    w="auto"
+                    h="75px"
+                    objectFit="cover"
+                />
             </Link>
             <SearchInput />
             <ColorModeSwitch />
