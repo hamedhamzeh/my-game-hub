@@ -3,13 +3,16 @@ import logoWhite from "../assets/Logo-white.png";
 import logoBlack from "../assets/Logo-black.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     const { colorMode } = useColorMode();
 
     return (
         <HStack padding="10px">
-            <Image src={colorMode === "dark" ? logoWhite : logoBlack} w="auto" h="80px" />
+            <Link to="/">
+                <Image src={colorMode === "dark" ? logoWhite : logoBlack} w="auto" h="80px" objectFit="cover" />
+            </Link>
             <SearchInput />
             <ColorModeSwitch />
         </HStack>
